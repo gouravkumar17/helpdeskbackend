@@ -15,9 +15,14 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: 'http://localhost:3000', // Your React app URL
+  origin: [
+    'http://localhost:3000', 
+    'https://helpdeskzone.netlify.app' // your live frontend URL
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+
 
 // Middleware
 app.use(express.json());
